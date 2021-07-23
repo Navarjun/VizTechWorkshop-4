@@ -1,0 +1,22 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+body {
+    width: 800px;
+    margin: auto;
+}
+
+ol {
+    margin-bottom: 30px;
+}
+
+ol li {
+    margin-top: 20px;
+}
+
+a {
+    color: #363;
+}
