@@ -1,7 +1,7 @@
 // sample code for copying and pasting
 
+// -------------------------
 // FOR STEP 1
-
 // loading 2 files
 Promise.all([
     d3.json('./data/sets.json'),
@@ -15,6 +15,7 @@ nodes.forEach(node => {
 });
 
 
+// -------------------------
 // FOR STEP 2
 
 // Add label for each circle group
@@ -25,7 +26,9 @@ columnGroup
 .attr('transform', 'translate(-25, -25)')
 .text(d => defsDict[d.column].shortName);
 
+// -------------------------
 // FOR STEP 3
+
 // defining color scale
 let colorScale = d3.scaleOrdinal()
         .domain(['Amundsen', 'Natural Environment Reseach Council', 'Sea Data Network', '', 'Climate and Forecast'])
@@ -36,6 +39,7 @@ let colorScale = d3.scaleOrdinal()
     return colorScale(defsDict[d].standard);
 })
 
+// -------------------------
 // FOR STEP 4
 // for hover interaction
 .on('mouseenter', function(event) {
@@ -76,3 +80,6 @@ function closeTooltip() {
         .style('display', 'none')
         .style('opacity', 0);
 }
+
+// Bind the click to close tooltip
+svg.on('click', closeTooltip);
